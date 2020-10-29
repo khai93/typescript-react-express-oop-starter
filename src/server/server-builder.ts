@@ -1,10 +1,12 @@
 import { Server } from './server';
 import { Express } from 'express';
+import { IController } from './controllers/IController';
 
 export class ServerBuilder {
     private readonly _app: Express;
     private _env: string = 'development';
     private _port: number = 8080;
+    private _controllers: IController[] = [];
 
     constructor(app: Express) {
         this._app = app;
@@ -17,6 +19,11 @@ export class ServerBuilder {
 
     setPort(port: number) {
         this._port = port;
+        return this;
+    }
+
+    setControllers(controllers: IController[]) {
+        this._controllers = controllers;
         return this;
     }
 
@@ -34,5 +41,9 @@ export class ServerBuilder {
 
     get port() {
         return this._port;
+    }
+
+    get controllers() {
+        return this._controllers
     }
 }
