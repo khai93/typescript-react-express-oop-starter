@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, Router } from 'express';
 import { ServerBuilder } from './server-builder';
 import path from 'path';
 import { IController } from './controllers/IController';
@@ -25,8 +25,12 @@ export class Server {
             });
         }
 
+        const apiRouter = Router();
+        
+        this._app.use("/api", apiRouter)
+
         this._controllers.forEach((controller) => {
-            controller.handler(this._app);
+            controller.handler(apiRouter);
         });
 
         this._app.listen(this._port, () => console.log(`Server started at port ${this._port}`))

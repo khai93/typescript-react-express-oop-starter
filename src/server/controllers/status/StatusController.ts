@@ -1,4 +1,4 @@
-import { Express, Router } from "express";
+import { Router } from "express";
 import path from "path";
 import { Logger } from "src/server/logger/logger";
 import { IController } from "../IController";
@@ -15,7 +15,7 @@ export class StatusController implements IController {
         private dependencies: StatusDependencies
     ) {}
 
-    public handler(app: Express): void {
+    public handler(app: Router): void {
         this._router = Router();
 
         app.use("/status", this._router);

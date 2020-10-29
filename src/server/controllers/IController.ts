@@ -1,5 +1,5 @@
-import { Express } from "express";
+import { Router } from "express";
 
 export interface IController {
-    handler(app: Express): void
+    handler(app: Router): void
 }

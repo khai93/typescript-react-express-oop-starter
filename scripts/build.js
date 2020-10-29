@@ -4,5 +4,4 @@ const exec = require('child_process').execSync;
 exec('npx tsc');
 
 // Client Build
-
 exec("cd ./src/client && yarn build");
