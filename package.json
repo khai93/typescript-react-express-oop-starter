@@ -1,9 +1,9 @@
 {
-  "name": "typescript-react-express-oop-starter",
+  "name": "cloudy",
   "version": "1.0.0",
-  "description": "Starter OOP app using typescript react express",
+  "description": "Simple weather app",
   "main": "index.js",
-  "repository": "https://github.com/khai93/typescript-react-express-oop-starter.git",
+  "repository": "https://github.com/khai93/Cloudy.git",
   "author": "khai93 <33293519+khai93@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
