@@ -1,7 +1,7 @@
 import express, { Express, Request, Response, Router } from 'express';
 import { ServerBuilder } from './server-builder';
 import path from 'path';
-import { IController } from './controllers/IController';
+import { IController } from './api/IController';
 
 export class Server {
     private _app: Express;

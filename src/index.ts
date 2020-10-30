@@ -1,6 +1,6 @@
 import { ServerBuilder } from './server/server-builder';
 import express from 'express';
-import controllers from './server/controllers';
+import controllers from './server/api';
 const app = express();
 
 const PORT = parseInt(process.env.PORT) || 8080;
