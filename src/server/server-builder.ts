@@ -1,6 +1,6 @@
 import { Server } from './server';
 import { Express } from 'express';
-import { IController } from './api/IController';
+import { IController } from 'src/types/api/IController';
 
 export class ServerBuilder {
     private readonly _app: Express;

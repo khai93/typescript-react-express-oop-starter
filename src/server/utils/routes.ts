@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { IExecuteable } from "../api/IExecuteable";
-import { Logger } from "../logger/logger";
+import { IExecuteable } from "src/types/core/IExecuteable";
+import { Logger } from '../modules/logger/logger';
 
 export type RouteUtilityDependencies = {
     readdir: Function,

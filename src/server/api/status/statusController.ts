@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { Logger } from "src/server/logger/logger";
+import { Logger } from "../../modules/logger/logger";
 import { ControllerUtility } from "src/server/utils/controllers";
-import { IController } from "../IController";
+import { IController } from "src/types/api/IController";
 
 export type StatusControllerDependencies = {
     controllerUtility: ControllerUtility,
