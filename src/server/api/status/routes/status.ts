@@ -1,4 +1,4 @@
-import { IExecuteable } from "src/types/core/IExecuteable";
+import { IExecuteable } from "src/types/IExecuteable";
 import { RouteDependencies } from "src/types/api/RouteDependencies";
 import { StatusControllerDependencies } from "../statusController";
 
