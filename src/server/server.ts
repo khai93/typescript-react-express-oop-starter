@@ -3,12 +3,19 @@ import { ServerBuilder } from './server-builder';
 import path from 'path';
 import { IController } from 'src/types/api/IController';
 
+/**
+ * The main server class that is built with the ServerBuilder class.
+ */
 export class Server {
     private _app: Express;
     private _port: number;
     private _env: String;
     private _controllers: IController[];
 
+    /**
+     * The constructor uses the properties in ServerBuilder and sets them on the Server class
+     * @param serverBuilder the builder class
+     */
     constructor(serverBuilder: ServerBuilder) {
         this._app = serverBuilder.app;
         this._port = serverBuilder.port;
@@ -16,6 +23,11 @@ export class Server {
         this._controllers = serverBuilder.controllers;
     }
 
+    /** 
+     * Handles production deployment for frontend.
+     * Routes the api controller routes.
+     * Starts the express server.
+    */
     public start() {
         if (this._env == 'production') {
             this._app.use(express.static(path.resolve("./") + "/build/client"));

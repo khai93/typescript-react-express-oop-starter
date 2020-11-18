@@ -2,6 +2,9 @@ import { Server } from './server';
 import { Express } from 'express';
 import { IController } from 'src/types/api/IController';
 
+/**
+ * Builds a Server class using the builder pattern.
+ */
 export class ServerBuilder {
     private readonly _app: Express;
     private _env: string = 'development';

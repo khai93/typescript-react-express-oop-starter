@@ -3,6 +3,9 @@ import { Logger } from "../../modules/logger/logger";
 import { ControllerUtility } from "src/server/utils/controllers";
 import { IController } from "src/types/api/IController";
 
+/**
+ * The dependencies for StatusController class
+ */
 export type StatusControllerDependencies = {
     controllerUtility: ControllerUtility,
     logger: Logger
@@ -11,6 +14,10 @@ export type StatusControllerDependencies = {
 export class StatusController implements IController {
     private _router: Router;
 
+    /**
+     * Sets dependencies as a private variable of the class
+     * @param dependencies Dependencies
+     */
     constructor(
         private dependencies: StatusControllerDependencies
     ) {}
