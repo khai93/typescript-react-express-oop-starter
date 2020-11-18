@@ -23,7 +23,7 @@ export interface SetUpControllerParams {
  */
 export class ControllerUtility {
     /**
-     * Sets the dependencie type as a private variable of the class
+     * Sets the dependencies type as a private variable of the class
      * @param dependencies Dependencies
      */
     constructor(

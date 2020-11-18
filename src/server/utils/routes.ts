@@ -35,7 +35,7 @@ export class RouteUtility {
     /**
      * Loops through all the routes found in the local file path routePath in params.
      * Injects a Router from express and it's parent dependencies.
-     * Calls execute on every route.
+     * Calls execute method on every route.
      * @param params Params
      * @returns A Promise resolved into an array of routes implementing IExecuteable 
      */
@@ -46,6 +46,9 @@ export class RouteUtility {
             return Promise.resolve(files.map(async route => {
                 const routeModule = await import(this.dependencies.pathJoin(params.routesPath, `${route}`));
                 
+                /**
+                 * Assumes that all route modules export a default class whoose dependencies are type RouteDependencies.
+                 */
                 const routeObj = new routeModule.default({ 
                     router: params.router, 
                     parentDependencies: params.parentDependencies 
