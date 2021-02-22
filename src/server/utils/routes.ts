@@ -50,9 +50,8 @@ export class RouteUtility {
                  * Assumes that all route modules export a default class whoose dependencies are type RouteDependencies.
                  */
                 const routeObj = new routeModule.default({ 
-                    router: params.router, 
-                    parentDependencies: params.parentDependencies 
-                });
+                    router: params.router                    
+                }, params.parentDependencies);
 
                 routeObj.execute();
 
